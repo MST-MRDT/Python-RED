@@ -4,7 +4,7 @@ from modules import xboxController
 myController = xboxController.XboxController()
 
 
-window = pyglet.window.Window()
+window = pyglet.window.Window(resizable=True, caption='DriveRED')
 label = pyglet.text.Label('Hello, world',
                           font_name='Times New Roman',
                           font_size=36,
@@ -18,10 +18,10 @@ def on_draw():
     label.draw()
 
 @window.event
-def update(value):
+def mainUpdate(value):
     window.clear()
     label.text = str(myController.getButton(0))
     label.draw()
 
-pyglet.clock.schedule_interval(update, 1/120.0)
+pyglet.clock.schedule_interval(mainUpdate, 1/120.0)
 pyglet.app.run()
