@@ -30,8 +30,6 @@ def mainUpdate(value):
     leftTread = myController.getAxis(1)
     rightTread = myController.getAxis(3)
 
-    print(toPercent(leftTread))
-
     leftLabel.text = "Left Power: " + toPercent(leftTread)
     leftLabel.draw()
 
